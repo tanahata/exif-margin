@@ -1,0 +1,38 @@
+name: photo_frame
+description: 写真に余白と撮影情報を添えるmacOS・Androidアプリ。
+publish_to: none
+version: 0.1.0+18
+environment:
+  sdk: '>=3.13.0 <4.0.0'
+  flutter: '>=3.47.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  desktop_drop: 0.6.1
+  file_selector: 1.1.0
+  image: 4.12.0
+  path: ^1.9.1
+  archive: 4.5.2
+  csv: 6.0.0
+  flutter_svg: 2.3.0
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  file_selector_platform_interface: ^2.7.0
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - LICENSE
+    - assets/config/
+    - assets/fonts/OFL.txt
+    - assets/fonts/ShareTech-OFL.txt
+  fonts:
+    - family: ShareTechMono
+      fonts:
+        - asset: assets/fonts/ShareTechMono-Regular.ttf
+    - family: ShareTech
+      fonts:
+        - asset: assets/fonts/ShareTech-Regular.ttf

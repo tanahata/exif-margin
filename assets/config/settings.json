@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "fontFamily": "ShareTech",
+  "cameraTextScale": 0.024,
+  "lensTextScale": 0.019,
+  "exifTextScale": 0.018,
+  "logoHeightScale": 0.021,
+  "logoMaxWidthScale": 0.25,
+  "bottomOffsetScale": 0.04
+}
