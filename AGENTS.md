@@ -19,9 +19,9 @@
 ## 作業と検証
 
 - 小さな差分と既存ライブラリを優先。無用の状態管理層・互換コード・新しいUI画面を増やさない。旧PRや別版のファイルを丸ごとコピーしない。版別の契約・入出力・機材辞書・画像形式を現行テストと照合してから最小差分だけ取り込む。
-- Macローカルで`dart format lib test`、`flutter analyze`、関係する`flutter test`を実行。UI整理時は`test/android_caption_editor_test.dart`、`test/android_settings_panel_test.dart`、`test/android_keyboard_test.dart`、`test/android_configuration_test.dart`などを確認する。結果は未実行／実行済みを区別する。
+- 文書・表示文言の変更は保存確認を基本とし、コード修正時は差分と必要な静的確認・関係する`flutter test`を実施する。フォーマット変更がある場合は`dart format`、ロジック変更時は`flutter analyze`を必要に応じて使う。UI整理時は`test/android_caption_editor_test.dart`、`test/android_settings_panel_test.dart`、`test/android_keyboard_test.dart`、`test/android_configuration_test.dart`のうち影響する試験だけ確認する。結果は未実施／実施済みを区別する。
 - Android版は**Google Play・他ストアに登録せず、GitHub Releasesで署名済みAPKのみ直接配布**する（2026-11-17本人確定）。Play Console登録、Play Store審査、掲載画像、AAB、Playストア専用の申告・ポリシー対応を初回公開の作業に加えない。Androidのrelease署名鍵と固定applicationId、versionCode増加、APKのSHA-256、手動更新時の設定保持は維持する。Googleの**ストア外アプリ向け開発者確認制度**はPlay登録とは別の将来課題とし、2027年以降の制度変更時だけ再評価する。
-- macOS版はDeveloper ID署名・公証を行わず、ad-hoc署名ZIPで配布する（2026-11-17本人確定）。Apple Developer Program登録、公証サービス、独自インストーラを公開条件として追加しない。最終ZIPの署名・SHA-256と、通常ダウンロード後のGatekeeper初回起動を別々に確認する。起動の案内にはApple公式のアプリ個別許可を用い、OS全体の保護無効化や警告の一律回避を促さない。
+- macOS版はDeveloper ID署名・公証を行わず、ad-hoc署名ZIPで配布する（2026-11-17本人確定）。Apple Developer Program登録、公証サービス、独自インストーラを公開条件として追加しない。最終ZIPの署名・SHA-256は確認する。初回配布・署名／ZIP作成・導入方式変更・起動に影響する変更では、通常ダウンロード後のGatekeeper初回起動をMac実機で確認する。方式が変わらない通常更新では初回起動試験の繰り返しを省略できる（2026-11-20共通規約改訂）。起動の案内にはApple公式のアプリ個別許可を用い、OS全体の保護無効化や警告の一律回避を促さない。
 - GitHub Actionsの自動実行を避ける。Draft PRを維持し、本人の明示承認前にmain統合・Public化・Git履歴の上書き・Release公開・配布物添付を行わない。
 - 公開ソースに個人用素材・署名鍵・パスワード・秘密情報・ローカルパスを追加しない。公開時は現行の検証済みスナップショットから新しいクリーン履歴を作り、古いPrivate開発履歴・内部文書を移さない。
 - 作業の判断・結果・未確認事項は作業記録に簡潔に残し、GitHubの公開コード・README・Releaseを現行仕様の正本とする。
